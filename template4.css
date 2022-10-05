@@ -1,0 +1,705 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root{
+	--green: rgb(33, 219, 70);
+
+}
+body{
+	font-family: 'Fira Sans',sans-serif;
+	background-color: whitesmoke;
+}
+nav{
+	width: 100%;
+	background-color: var(--green);
+	color: white;
+	display: flex;
+	flex-wrap: nowrap;
+	position: fixed;
+	z-index: 1;
+}
+nav .logo{
+	display: inline-block;
+	width: 200px;
+	white-space: nowrap;
+	background-color: lime;
+	text-align: center;
+	padding: 12px;
+}
+nav .logo img{
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	padding: 5px;
+	border-radius: 5px;
+	vertical-align: sub;
+}
+nav .logo span{
+	display: inline-block;
+	vertical-align: super;
+}
+
+nav .navbar{
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+nav .navbar ul{
+	list-style-type: none;
+	height: 100%;
+}
+nav .navbar li{
+	height: 100%;
+	display: inline-block;
+	float: left;
+}
+nav .navbar a{
+	height: 100%;
+	display: inline-block;
+	padding: 15px 25px;
+	color: white;
+}
+.navbar a ion-icon{
+	font-size: 1.2em;
+}
+nav .navbar a:hover{
+	background-color: green;
+}
+.navbar li:last-child a{
+	position: relative;
+}
+.navbar li:last-child a::after{
+	content: '3';
+	padding: 0 6px;
+	border-radius: 50%;
+	background-color: red;
+	color: white;
+	position: absolute;
+	z-index: 2;
+}
+.navbar li .notification{
+	width: 250px;
+	display: none;
+	position: absolute;
+	z-index: 3;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.navbar li .notification div{
+	padding: 10px;
+	border-bottom: 1px solid green;
+}
+.navbar li .notification div:first-child{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.navbar li .notification div:last-child{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: none;
+}
+.navbar li .notification div:hover{
+	background-color: var(--green);
+}
+.navbar li:last-child a:hover .notification{
+	display: block;
+}
+
+
+
+nav .profile{
+	width: 200px;
+	display: inline-block;
+	padding: 12px;
+	white-space: nowrap;
+	background-color: lime;
+	text-align: center;
+	cursor: pointer;
+}
+nav .profile img{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	vertical-align: sub;
+	margin-left: 5px;
+}
+nav .profile .profilename{
+	vertical-align: super;
+}
+nav .profile:hover{
+	background-color: green;
+}
+
+.title{
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+.main{
+	padding-top: 60px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+}
+
+.leftcontent{
+	width: 20%;
+}
+.leftcontent .profile{
+	background-color: white;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+	font-size: 0.9em;
+	line-height: 30px;
+
+}
+.leftcontent .myphoto img{
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;
+	border-radius: 50%;
+	outline: 2px solid var(--green);
+}
+.leftcontent .myphoto{
+	text-align: center;
+	color: var(--green);
+}
+.leftcontent .mybio ion-icon{
+	color: var(--green);
+	margin-right: 5px;
+}
+
+.leftcontent .mycontent{
+	background-color: var(--green);
+	color: white;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+	line-height: 30px;
+}
+.leftcontent .mycontent div{
+	padding: 8px 20px;
+	border-bottom: 1px solid white;
+	cursor: pointer;
+}
+.leftcontent .mycontent div:first-child{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.leftcontent .mycontent div:last-child{
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom: none;
+}
+.leftcontent .mycontent div:hover{
+	background-color: green;
+}
+
+.leftcontent .interest{
+	background-color: white;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.leftcontent .interest span{
+	display: inline-block;
+	padding: 3px 5px;
+	margin: 3px;
+	background-color: var(--green);
+	color: white;
+	border-radius: 5px;
+	font-size: 0.8em;
+	cursor: pointer;
+}
+.leftcontent .interest span:hover{
+	background-color: green;
+}
+.leftcontent .news{
+	background-color: var(--green);
+	color: white;
+	margin: 10px 0;
+	padding: 20px;
+	line-height: 100px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+	text-align: center;
+}
+.leftcontent .news div{
+	border-radius: 5px;
+	border: 1px solid white;
+}
+
+
+.maincontent{
+	width: 50%;
+}
+.maincontent .status{
+	background-color: white;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.maincontent .status .title{
+	color: var(--green);
+	font-weight: bold;
+}
+.maincontent .status input[type="text"]{
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.maincontent .status button{
+	padding: 8px 12px;
+	margin-top: 10px;
+	background-color: var(--green);
+	color: white;
+	font-size: 1.1em;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+.maincontent .status form{
+	position: relative;
+	padding: 0 10px;
+}
+.maincontent .status button:hover{
+	background-color: green;
+}
+.maincontent .status ion-icon{
+	transform: translateY(2px);
+}
+.maincontent .status .addphoto{
+	position: absolute;
+	right: 10px;
+}
+
+.maincontent .interest{
+	display: none;
+	background-color: white;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.maincontent .interest span{
+	display: inline-block;
+	padding: 3px 5px;
+	margin: 3px;
+	background-color: var(--green);
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.maincontent .interest span:hover{
+	background-color: green;
+}
+
+.maincontent .post{
+	background-color: white;
+	padding: 20px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.maincontent .post div{
+	margin-bottom: 10px;
+}
+.maincontent .post img{
+	width: 100%;
+}
+.maincontent .profile img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	vertical-align: sub;
+	cursor: pointer;
+}
+.maincontent .profile h3{
+	display: inline-block;
+	vertical-align: super;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.maincontent .profile .time{
+	float: right;
+	opacity: 0.5;
+	vertical-align: super;
+	margin-top: 10px;
+}
+
+.maincontent .postcontent{
+	margin-top: 20px;
+	font-family: 'Khmer OS Battambang','Khmer OS';
+}
+
+.maincontent .react{
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+.maincontent .react button{
+	margin: 0 5px;
+	padding: 10px;
+	background-color: var(--green);
+	color: white;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+.maincontent .react ion-icon{
+	transform: translateY(1px);
+}
+.maincontent .react .like{
+	width: 25%;
+}
+.maincontent .react .comment{
+	width: 50%;
+}
+.maincontent .react .share{
+	width: 25%;
+}
+.maincontent .react button:hover{
+	background-color: green;
+}
+
+.maincontent .ad{
+	display: none;
+	background-color: var(--green);
+	color: white;
+	margin: 10px 0;
+	padding: 20px;
+	line-height: 100px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+	text-align: center;
+}
+.maincontent .ad div{
+	border-radius: 5px;
+	border: 1px solid white;
+}
+
+
+.rightcontent{
+	width: 20%;
+}
+.rightcontent img{
+	width: 100%;
+}
+
+.rightcontent .upcoming{
+	background-color: var(--green);
+	color: white;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.rightcontent .title{
+	padding: 10px 0;
+}
+
+.rightcontent .event h4{
+	margin-top: 5px;
+}
+.rightcontent .event p{
+	margin: 10px 0;
+	font-size: 0.8em;
+} 
+.rightcontent .event button{
+	padding: 3px 12px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+.rightcontent .event button:hover{
+	background-color: grey;
+}
+
+
+.rightcontent .friendrequest{
+	background-color: white;
+	padding: 15px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+	text-align: center;
+}
+.rightcontent .friendrequest .title{
+	padding-bottom: 15px;
+}
+.friendrequest img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 2px solid var(--green);
+	cursor: pointer;
+}
+.friendrequest .profile p{
+	text-align: center;
+	margin: 10px 0;
+}
+
+.friendrequest .choose{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.friendrequest .choose .button{
+	display: inline-block;
+	width: 50%;
+	font-size: 0.8em;
+	text-align: center;
+	padding: 10px 0;
+	cursor: pointer;
+}
+.friendrequest .button ion-icon{
+	font-size: 1.2em;
+	transform: translateY(3px);
+}
+.choose .button:first-child{
+	color: white;
+	background-color: limegreen;
+}
+.choose .button:last-child{
+	color: white;
+	background-color: indianred;
+}
+.choose .button:first-child:hover{
+	color: white;
+	background-color: green;
+}
+.choose .button:last-child:hover{
+	color: white;
+	background-color: darkred;
+}
+
+
+.rightcontent .live{
+	background-color: var(--green);
+	color: white;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.rightcontent .livenow p{
+	margin-bottom: 10px;
+}
+.rightcontent .livevideo{
+	position: relative;
+}
+.rightcontent .livevideo::after{
+	content: 'Live';
+	background-color: rgb(255, 50, 50);
+	color: white;
+	font-size: 0.8em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 2px 5px;
+}
+.rightcontent .livenow button{
+	padding: 3px 12px;
+	margin-top: 5px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+.rightcontent .livenow button:hover{
+	background-color: grey;
+}
+
+
+.rightcontent .play{
+	background-color: white;
+	padding: 15px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+}
+.rightcontent .game{
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+}
+.rightcontent .game img{
+	width: ;
+	height: ;
+}
+.rightcontent .play button{
+	background-color: var(--green);
+	color: white;
+	margin-top: 5px;
+	padding: 3px 12px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+.rightcontent .play button:hover{
+	background-color: green;
+}
+
+.rightcontent .ad{
+	background-color: var(--green);
+	color: white;
+	margin: 10px 0;
+	padding: 20px;
+	line-height: 100px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px black;
+	text-align: center;
+}
+.rightcontent .ad div{
+	border-radius: 5px;
+	border: 1px solid white;
+}
+
+.toTop{
+	display: inline-block;
+	font-size: 2em;
+	background-color: lime;
+	padding: 5px 10px;
+	border-radius: 50%;
+	border: 2px solid green;
+	box-shadow: 1px 1px 5px black;
+	position: fixed;
+	bottom: 20px;
+	left: 40px;
+}
+.toTop a ion-icon{
+	color: white;
+	transform: translateY(2px);
+}
+
+
+footer{
+	background-color: lime;
+	color: white;
+	padding: 50px 0;
+	margin-top: 20px;
+	text-align: center;
+}
+footer .logo{
+	display: inline-block;
+	width: 200px;
+	white-space: nowrap;
+	background-color: lime;
+	text-align: center;
+	padding: 12px;
+}
+footer img{
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	padding: 5px;
+	border-radius: 5px;
+}
+footer h3{
+	display: inline-block;
+	vertical-align: super;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 700px){
+	body{
+		font-size: 0.8em;
+	}
+	nav{
+		height: 50px;
+	}
+	nav .navbar{
+		width: 100%;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	nav .navbar ul{
+		width: 100%;
+	}
+	nav .navbar li{
+		width: 25%;
+	}
+	nav .navbar a{
+		font-size: 15px;
+		text-align: center;
+		width: 100%;
+		padding: auto;
+	}
+
+	nav .logo{
+		width: auto;
+		padding: 15px;
+	}
+	nav .logo img{
+		width: 20px;
+		height: 20px;
+	}
+	nav .logo span{
+		display: none;
+	}
+
+	nav .profile{
+		padding: 10px;
+	}
+
+	.main{
+		display: block;
+		padding-top: 50px;
+	}
+
+	.leftcontent{
+		display: none;
+	}
+
+	.maincontent{
+		width: 100%;
+		padding: 10px;
+	}
+	.maincontent .interest{
+		display: block;
+	}
+	.maincontent .ad{
+		display: block;
+	}
+
+	.rightcontent{
+		width: 100%;
+		padding: 10px;
+	}
+	.rightcontent .upcoming{
+		margin-top: 0;
+	}
+	.rightcontent .friendrequest{
+		display: none;
+	}
+	.rightcontent .play{
+		display: none;
+	}
+	.rightcontent .ad{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 400px){
+	nav .profile .profilename{
+		display: none;
+	}
+	nav .profile{
+		width: auto;
+	}
+	nav .navbar a{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
